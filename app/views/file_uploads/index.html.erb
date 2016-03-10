@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:file_name) %></th>
       <th><%= model_class.human_attribute_name(:uploaded_at) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -17,8 +16,7 @@
   <tbody>
     <% @file_uploads.each do |file_upload| %>
       <tr>
-        <td><%= link_to file_upload.id, file_upload_path(file_upload) %></td>
-        <td><%= file_upload.file_name %></td>
+        <td><%= link_to file_upload.file_name, file_upload_path(file_upload) %></td>
         <td><%= file_upload.uploaded_at %></td>
         <td><%= file_upload.description %></td>
         <td><%= file_upload.file_type %></td>
