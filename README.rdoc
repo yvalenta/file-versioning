@@ -21,3 +21,5 @@ Instructions to setup and run application.
 * Configure  your database information in config/database.yml (user, password)
 * Then type `rails db:create` and `rails db:create`
 * Then Type `rails server` to go up the WEBrick server
+
+Preview: https://file-versioning.herokuapp.com/
