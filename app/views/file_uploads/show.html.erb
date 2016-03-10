@@ -12,6 +12,7 @@
   <dd><%= @file_upload.description %></dd>
   <dt><strong><%= model_class.human_attribute_name(:file_type) %>:</strong></dt>
   <dd><%= @file_upload.file_type %></dd>
+  <dd><%= image_tag @file_upload.file_type %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
@@ -28,20 +29,21 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <td><strong><%= model_class.human_attribute_name(:Version) %></strong></td>
+      <td><strong><%= model_class.human_attribute_name(:opcion) %></strong></td>
+      <td><strong><%= model_class.human_attribute_name(:version) %></strong></td>
       <td><strong><%= model_class.human_attribute_name(:type) %></strong></td>
     </tr>
   </thead>
   <tbody>
     <% @file_versions.each do |file_version| %>
       <tr>
-        <td><%= file_version.file_version %></td>
-        <td><%= file_version.file_type %></td>
         <td>
           <%= link_to t('.restore', :default => t("helpers.links.restore")),
               edit_file_upload_file_version_path(params[:id], file_version.id), :class => 'btn btn-default'%>
 
         </td>
+        <td><%= file_version.file_version %></td>
+        <td><%= image_tag file_version.file_type %></td>
       </tr>
     <% end %>
   </tbody>

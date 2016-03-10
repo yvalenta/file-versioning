@@ -17,13 +17,16 @@ class FileVersionsController < ApplicationController
   def new
     @file_version = FileVersion.new
     @file_version.file_upload_id = params[:file_upload_id]
+    file_version = FileVersion.where(file_upload_id: params[:file_upload_id]).count
+    @file_version.file_version = file_version + 1
   end
 
   # GET /file_versions/1/edit
   def edit
-    file_version = @file_upload
+    #raise "oe"
+    file_version = @file_upload.file_type
     respond_to do |format|
-      if @file_upload.update(file_type: @file_version.file_type) && @file_version.update(file_type: file_version.file_type)
+      if (@file_upload.update(file_type: @file_version.file_type) && @file_version.update(file_type: file_version))
         format.html { redirect_to @file_upload, notice: 'File upload was successfully restored.' }
       end
     end
