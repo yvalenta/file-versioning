@@ -1,0 +1,23 @@
+## Architecture description.
+------
+
+##### The server side of the file versioning application was developed with Ruby 2.1.3 and Rails 5. beta 1
+
+Is based on an initial model containing three tables:
+
+1. file_uploads: uploaded files will be stored here
+
+2. file_version: all the versions of the uploaded files will be here, referenced by the `file_upload_id` column
+
+3. file_comments: this is where comments posted about the uploaded files will be stored, referenced by `file_upload_id` and `file_version_id`.
+
+The current local storage used is mysql and it has an initial preview hosted storage heroku with PosgreSQL
+
+###Instructions to setup and run application.
+======
+* Clone the repository
+* Open the project folder
+* In console type `bundle install`
+* Configure  your database information in config/database.yml (user, password)
+* Then type `rails db:create` and `rails db:create`
+* Then Type `rails server` to go up the puma server

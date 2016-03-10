@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  file_upload_id: 
+  file_version: 1
+
+two:
+  file_upload_id: 
+  file_version: 1
