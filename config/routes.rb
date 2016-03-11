@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
+
   resources :file_uploads do
-    resources :file_versions
+    resources :file_versions do
+      resources :comments
+    end
+    resources :comments
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

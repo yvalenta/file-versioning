@@ -31,6 +31,8 @@
                       :class => 'btn btn-xs btn-danger' %>
           <%= link_to t('.Re-Upload', :default => t("helpers.links.Re-Upload")),
                       new_file_upload_file_version_path(file_upload), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.comments', :default => t("helpers.links.comments")),
+                      new_file_upload_comment_path(file_upload), :class => 'btn btn-default btn-xs' %>
         </td>
       </tr>
     <% end %>
