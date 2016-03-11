@@ -9,9 +9,9 @@ Is based on an initial model containing three tables:
 
 2. file_version: all the versions of the uploaded files will be here, referenced by the `file_upload_id` column
 
-3. file_comments: this is where comments posted about the uploaded files will be stored, referenced by `file_upload_id` and `file_version_id`.
+3. comments: For the comments, a table with polymorphic associations was created for the uploaded files and this functionality will soon be added to the file versioning.
 
-The current local storage used is mysql and it has an initial preview hosted storage heroku with PosgreSQL
+The current local storage used is mysql and it has an initial preview hosted storage heroku with PostgreSQL
 
 Instructions to setup and run application.
 ======
