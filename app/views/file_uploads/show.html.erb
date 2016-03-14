@@ -13,6 +13,17 @@
   <dt><strong><%= model_class.human_attribute_name(:file_type) %>:</strong></dt>
   <dd><%= image_tag @file_upload.file_type %></dd>
 </dl>
+<dl class="dl-vertical">
+  <dt>Comments: </dt>
+  <% @file_upload.comments.each do |comment| %>
+    <ul>
+      <li><%= comment.comment %></li>
+    </ul>
+  <% end %>
+<%= link_to t('.AddComments', :default => t("helpers.links.AddComments")),
+              new_file_upload_comment_path(@file_upload), :class => 'btn btn-default btn-xs' %>
+
+</dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               file_uploads_path, :class => 'btn btn-default'  %>
@@ -24,10 +35,7 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 
-<%= link_to t('.Re-Upload', :default => t("helpers.links.Re-Upload")),
-            new_file_upload_file_version_path(@file_upload), :class => 'btn btn-default' %>
-
-
+<%# raise "oe" %>
 <table class="table table-striped">
   <thead>
     <tr>
